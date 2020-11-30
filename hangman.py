@@ -6,7 +6,7 @@ words = [
     "hangman",
     "computer",
     "science",
-    "programming",
+    "programmingaaaaaaaa",
     "python",
     "television"
     "mathematics",
