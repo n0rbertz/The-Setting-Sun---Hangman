@@ -18,6 +18,8 @@ banner = pyfiglet.figlet_format("Hangman")
 print(banner)
 
 name = input("Before we start, please type your name: ")
+if not name:
+        name = "player"
 cap = name.capitalize()
 clear()
 
@@ -41,30 +43,61 @@ elif menuset == "no":
 else:
      print("Command is unavaliable")
 
+easy = pyfiglet.figlet_format("Easy")
+medium = pyfiglet.figlet_format("Medium")
+hard = pyfiglet.figlet_format("Hard")
 
-levels = input("Please select a level (easy, normal, hard): ")
- #   if levels == "easy": #pár betű a szóból
 
-  #  elif levels == "normal":
-    
-    elif levels == "hard":
+levels = str(input("Please select a level (easy, medium, hard): "))
+if levels == "easy":
+        print(easy)
+        print("\nYour chose level is: {0}\n".format(levels))
+        print("You will see a few letters from the guessing word.")
+        time.sleep(3)
+elif levels == "medium":
+        print(medium)
+        print("\nYour chose level is: {0}\n".format(levels))
+        print("You will see a few letters from the guessing word")
+        time.sleep(3)
+elif levels == "hard":
+        print(hard)
+        print("\nYour chose level is: {0}\n".format(levels))
+        print("You won't see any letters from the guessing word.")
+        time.sleep(3)
+else:
+       print("\nYou typed something wrong! Try again.")
 
-  # else:
-   # print("You typed something wrong! Try again.")
 
-print("Your chose level is: {0}.\n".format(levels))
-
+clear()
 goodluck = pyfiglet.figlet_format("Good Luck!\n")
 print(goodluck)
 
-time.sleep(1)
+words = [
+    "hangman",
+    "computer",
+    "science",
+    "programming",
+    "python",
+    "television"
+    "mathematics",
+    "player",
+    "telephone",
+    "visual studio",
+    "milk",
+    "apple",
+    "water",
+    "tomato",
+    "potato",
+    "CodeCool"
+]
+
+time.sleep(0.65)
 clear()
 
-words = open("countries-and-capitals.txt","r")  #import txt file
+#importing countries-and-capitals.txt somehow
 
 word = random.choice(words)
 guesses = ""
-#life = pyfiglet.figlet_format("Lives: ")
 
 lives = 12
 while lives > 0:
@@ -88,4 +121,4 @@ while lives > 0:
         lives -= 1 #-1
     if guess not in guesses:
         guesses += guess
-    print("Guessed letters: " + guesses +",")
+    print("Guessed letters: " + guesses)
