@@ -22,17 +22,13 @@ if not name:
         name = "player"
 cap = name.capitalize()
 clear()
+
+
 answer = 0
 while answer != 1:
 
-<<<<<<< HEAD
-    menuset = input("Welcome {0}!\n\nDo you want to play? ".format(cap))
-=======
-answer == 0
-while answer != 1:
-
     menuset = input("Welcome {0}!\nDo you want to play? ".format(cap))
->>>>>>> d1f8f747037d13b6c9095ce3c0ffab381e3870af
+
     no = pyfiglet.figlet_format("See you next time!")
 
 
