@@ -42,6 +42,10 @@ while lives > 0:
         break
 
     guess = input("\n\nGuess the character: ")
-    guesses += guess
-    if guess not in word: #Not in the list
-        lives -= 1 #-1 
+    if guess in guesses:
+        print("You already used this letter")
+    if guess not in word and guess not in guesses:
+        lives -= 1  # -1
+    if guess not in guesses:
+        guesses += guess
+    print("Guessed letters: " + guesses)
