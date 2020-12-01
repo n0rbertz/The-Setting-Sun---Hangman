@@ -6,7 +6,7 @@ words = [
     "hangman",
     "computer",
     "science",
-    "programmingaaaaaaaa",
+    "programming",
     "python",
     "television"
     "mathematics",
@@ -28,12 +28,13 @@ guesses = ""
 # any number of turns can be used here
 lives = 12
 while lives > 0:
+    print("Lives: " + str(lives))
     failed = 0
     for char in word:
         if char in guesses:
-            print(char, end="")
+            print(char + " ", end="")
         else:
-            print("_", end="")
+            print("_ ", end="")
             failed += 1
     if failed == 0:
         print("\n\nYou Win!")
