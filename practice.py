@@ -24,16 +24,15 @@ cap = name.capitalize()
 clear()
 
 
+print("Welcome {0}.\n".format(cap))
 answer = 0
 while answer != 1:
-
-    menuset = input("Welcome {0}!\nDo you want to play? ".format(cap))
-
+    menuset = input("Do you want to play? \n")
     no = pyfiglet.figlet_format("See you next time!")
 
 
     if menuset == "yes":
-        print("Alright, let's play!")
+        print("\nAlright, let's play!")
         time.sleep(1)
         clear()
         answer += 1
@@ -49,7 +48,7 @@ while answer != 1:
         sys.exit()
         answer += 1
     else:
-         print("Command is unavaliable")
+         print("Command is unavaliable, try again!\n")
 
 easy = pyfiglet.figlet_format("Easy")
 medium = pyfiglet.figlet_format("Medium")
@@ -61,23 +60,29 @@ while level != 1:
     if levels == "easy":
         print(easy)
         print("\nYour chose level is: {0}\n".format(levels))
-        print("You will see a few letters from the guessing word.")
+        print("Introduction:")
+        print("You have to guess the word.")
+        print("Help: You will see a few letters from the guessing word.")
         level +=1
-        time.sleep(2.5)
+        time.sleep(3.2)
         #level +=1
     elif levels == "medium":
         print(medium)
         print("\nYour chose level is: {0}\n".format(levels))
-        print("You will see a few letters from the guessing word")
+        print("Introduction:\n")
+        print("You have to guess the word.")
+        print("Help: You will see a few letters from the guessing word")
         level +=1
-        time.sleep(2.5)
+        time.sleep(3.2)
         #level +=1
     elif levels == "hard":
         print(hard)
         print("\nYour chose level is: {0}\n".format(levels))
+        print("Introduction:\n")
+        print("You have to guess the word.")
         print("You won't see any letters from the guessing word.")
         level +=1
-        time.sleep(2.5)
+        time.sleep(3.2)
         #level +=1
     else:
        print("\nYou typed something wrong! Try again.")
