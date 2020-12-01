@@ -44,8 +44,8 @@ while lives > 0:
     guess = input("\n\nGuess the character: ")
     if guess in guesses:
         print("You already used this letter")
+    if guess not in word and guess not in guesses:
+        lives -= 1  # -1
     if guess not in guesses:
         guesses += guess
-    if guess not in word or guess not in guesses:
-        lives -= 1 #-1
     print("Guessed letters: " + guesses)
