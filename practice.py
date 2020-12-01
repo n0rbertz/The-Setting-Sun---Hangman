@@ -15,7 +15,12 @@ if menu == "yes":
     print("Alright, let's play!")
 elif menu == "no":
     print("See you next time!")
-    time.sleep(3)
+    time.sleep(1)
+    print(".")
+    time.sleep(1)
+    print(".")
+    time.sleep(1)
+    print(".")
     sys.exit()
 else:
     print("Command is unavaliable")
