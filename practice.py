@@ -23,25 +23,31 @@ if not name:
 cap = name.capitalize()
 clear()
 
-menuset = input("Welcome {0}!\nDo you want to play? ".format(cap))
-no = pyfiglet.figlet_format("See you next time!")
+answer == 0
+while answer != 1:
 
-if menuset == "yes":
-    print("Alright, let's play!")
-    time.sleep(1)
-    clear()
-elif menuset == "no":
-    clear()
-    print(no) 
-    time.sleep(1)
-    print(".")
-    time.sleep(1)
-    print(".")
-    time.sleep(1)
-    print(".")
-    sys.exit()
-else:
-     print("Command is unavaliable")
+    menuset = input("Welcome {0}!\nDo you want to play? ".format(cap))
+    no = pyfiglet.figlet_format("See you next time!")
+
+
+    if menuset == "yes":
+        print("Alright, let's play!")
+        time.sleep(1)
+        clear()
+        answer += 1
+    elif menuset == "no":
+        clear()
+        print(no)
+        time.sleep(1)
+        print(".")
+        time.sleep(1)
+        print(".")
+        time.sleep(1)
+        print(".")
+        sys.exit()
+        answer += 1
+    else:
+         print("Command is unavaliable")
 
 easy = pyfiglet.figlet_format("Easy")
 medium = pyfiglet.figlet_format("Medium")
