@@ -9,12 +9,12 @@ print(banner)
 
 name = input("Before we start, please type your name: ")
 menu = input("Welcome {0}!\nDo you want to play? ".format(name))
-
+no = pyfiglet.figlet_format("See you next time!")
 
 if menu == "yes":
     print("Alright, let's play!")
 elif menu == "no":
-    print("See you next time!")
+    print(no)
     time.sleep(1)
     print(".")
     time.sleep(1)
@@ -26,8 +26,14 @@ else:
     print("Command is unavaliable")
 
 levels = input("Please select a level (easy, normal, hard, expert): ")
+    if levels == "easy":
 
+    elif levels == "normal":
+    
+    elif levels == "hard":
 
+    elif levels == "expert":
+        
 goodluck = pyfiglet.figlet_format("Good Luck!\n")
 print(goodluck)
 
