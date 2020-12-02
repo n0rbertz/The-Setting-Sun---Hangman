@@ -4,6 +4,8 @@ import sys
 import time
 import os
 
+exit1 = print(sys.exit)
+
 def clear(): os.system('clear')
 reminder = pyfiglet.figlet_format("Friendly Reminder")
 print(reminder+"\nIf you want to [Quit], just type exit.\n")
