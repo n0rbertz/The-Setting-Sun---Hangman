@@ -94,24 +94,10 @@ clear()
 goodluck = pyfiglet.figlet_format("Good Luck!\n")
 print(goodluck)
 
-words = [
-    "hangman",
-    "computer",
-    "science",
-    "programming",
-    "python",
-    "television"
-    "mathematics",
-    "player",
-    "telephone",
-    "visual studio",
-    "milk",
-    "apple",
-    "water",
-    "tomato",
-    "potato",
-    "CodeCool"
-]
+list_name = open("countries-and-capitals.txt", "a")
+words = list_name
+print(words)
+
 
 time.sleep(0.65)
 clear()
@@ -121,9 +107,36 @@ win = pyfiglet.figlet_format("You win!")
 word = random.choice(words)
 guesses = ""
 
+#medium
+index = random.choice(word)
+
+if levels == "medium":
+    for char in word:
+        if char != index:
+            word = word.replace(char, "_")
+    print(word)
+
+#easy
+if levels == "easy":
+    x = []
+    index2 = random.choice(word)
+    x.append(index2)
+    index3 = random.choice(word)
+    if index3 not in x:
+        x.append(index3)
+    else:
+        while index3 in x:
+            index3 = random.choice(word)
+            if index3 not in x:
+                x.append(index3)
+    for char in word:
+        if char not in x:
+            word = word.replace(char, "_")
+    print(word)
+
 lives = 12
 while lives > 0:
-    print("Lives: " + str(lives))
+    print("\nLives: " + str(lives))
     failed = 0
     for char in word:
         if char in guesses:
