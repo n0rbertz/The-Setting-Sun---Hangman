@@ -78,7 +78,7 @@ while level != 1:
         print("Your chose level is: {0}\n".format(levels))
         print("Introduction:\n")
         print("You have to guess the word.")
-        print("Help: You will get a few letters from the guessing word.")
+        print("Help: You will get a few letters from the guessing word.\nIf you need hint in the future just type [hint] for help.")
         for i in dot2:
             sys.stdout.write(i)
             sys.stdout.flush()
@@ -90,7 +90,7 @@ while level != 1:
         print("Your chose level is: {0}\n".format(levels))
         print("Introduction:\n")
         print("You have to guess the word.")
-        print("Help: You will get a few letters from the guessing word")
+        print("Help: You will get a few letters from the guessing word,\nIf you need hint in the future just type [hint] for help.")
         for i in dot2:
             sys.stdout.write(i)
             sys.stdout.flush()
@@ -140,7 +140,7 @@ time.sleep(0.5)
 clear()
 
 word = random.choice(words)
-guesses = ""
+guessword = word
 
 #medium
 index = random.choice(word)
@@ -182,12 +182,12 @@ if levels == "easy":
 #print(x)
 
 win = pyfiglet.figlet_format("You win!")
-
+guesses = ""
 lives = 12
 print("\nLives: "+ str(lives))
 while lives > 0:
     failed = 0
-    for char in word:
+    for char in guessword:
         if char in guesses:
             print(char + " ", end="")
         else:
@@ -195,7 +195,7 @@ while lives > 0:
             failed += 1
     if failed == 0:
         print("\n"+win)
-        print("\nThe word is:", word)
+        print("\nThe word is:", guessword)
         break
 
     guess = input("\n\nGuess the character: ")
@@ -205,10 +205,23 @@ while lives > 0:
         sys.exit()
     if guess in guesses:
         print("You already used this letter.\n")
-    if guess not in word and guess not in guesses:
+    if guess not in guessword and guess not in guesses:
         lives -= 1 #-1
     if guess not in guesses:
         guesses += guess
+
+    if levels == "easy":
+        if guess == "hint":
+            clear()
+            print("Hint",word)
+            time.sleep(1.5)
+            guesses = ""
+    if levels == "medium":
+        if guess == "hint":
+            clear()
+            print("Hint",word)
+            time.sleep(1.5)
+            guesses = ""
     #print("Guessed letters: " + guesses)
     if lives == 11:
         clear()
@@ -356,4 +369,4 @@ while lives > 0:
         print("    /   \      |")
         print("   ____________|___")
     if lives == 0:
-        print("The word was",word)
+        print("The word was",guessword)
