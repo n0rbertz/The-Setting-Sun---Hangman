@@ -140,8 +140,7 @@ time.sleep(0.5)
 clear()
 
 word = random.choice(words)
-guesses = ""
-
+guessword = word
 #medium
 index = random.choice(word)
 
@@ -183,11 +182,12 @@ if levels == "easy":
 
 win = pyfiglet.figlet_format("You win!")
 
+guesses = ""
 lives = 12
 print("\nLives: "+ str(lives))
 while lives > 0:
     failed = 0
-    for char in word:
+    for char in guessword:
         if char in guesses:
             print(char + " ", end="")
         else:
@@ -195,7 +195,7 @@ while lives > 0:
             failed += 1
     if failed == 0:
         print("\n"+win)
-        print("\nThe word is:", word)
+        print("\nThe word is:", guessword)
         break
 
     guess = input("\n\nGuess the character: ")
@@ -205,7 +205,7 @@ while lives > 0:
         sys.exit()
     if guess in guesses:
         print("You already used this letter.\n")
-    if guess not in word and guess not in guesses:
+    if guess not in guessword and guess not in guesses:
         lives -= 1 #-1
     if guess not in guesses:
         guesses += guess
@@ -356,4 +356,4 @@ while lives > 0:
         print("    /   \      |")
         print("   ____________|___")
     if lives == 0:
-        print("The word was",word)
+        print("The word was:",guessword)
