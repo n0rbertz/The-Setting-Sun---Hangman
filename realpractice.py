@@ -117,29 +117,38 @@ clear()
 goodluck = pyfiglet.figlet_format("Good Luck!\n")
 print(goodluck)
 
-words = [
-    "hangman",
-    "computer",
-    "science",
-    "programming",
-    "python",
-    "television"
-    "mathematics",
-    "player",
-    "telephone",
-    "visual studio",
-    "milk",
-    "apple",
-    "water",
-    "tomato",
-    "potato",
-    "CodeCool"
-]
+
+def get_random_word():
+    file = "/home/pc/git/projects/The-Setting-Sun---Hangman/countries-and-capitals.txt"
+    with open(file) as f:
+        lines = f.readlines()
+    random_line = random.choice(lines)
+    country = random_line.split(' | ')[0]
+    return country
+
+#words = [
+#    "hangman",
+#    "computer",
+#    "science",
+#    "programming",
+#    "python",
+#    "television"
+#    "mathematics",
+#    "player",
+#    "telephone",
+#    "visual studio",
+#    "milk",
+#    "apple",
+#    "water",
+##    "tomato",
+#    "potato",
+#    "CodeCool"
+#]
 
 time.sleep(0.5)
 clear()
 
-word = random.choice(words)
+word = get_random_word()
 guessword = word
 
 #medium
@@ -174,12 +183,6 @@ if levels == "easy":
 #alphabet: abcdefghijklmnopqrstuvwxyz .lower
 #alp = "abcdefghijklmnopqrstuvwxyz"
 #alphabet2: ABCDEFGHIJKLMNOPQRSTUVWXYZ .upper
-
-#value = "Tree 5"
-
-# Uppercase the string.
-#x = value.upper()
-#print(x)
 
 win = pyfiglet.figlet_format("You win!")
 guesses = ""
